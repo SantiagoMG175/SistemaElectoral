@@ -13,7 +13,7 @@
 #include <QDesktopWidget>
 #include <QDateTime>
 #include "principal.h"
-#include "ui_principal.h"
+#include <QRectF>
 
 namespace Ui {
 class Certificado;
@@ -31,6 +31,8 @@ public:
 private slots:
     void on_cmdGuardar_clicked();
 
+    void on_cmdResultados_clicked();
+
 private:
     Ui::Certificado *ui;
 
@@ -38,6 +40,7 @@ private:
     Persona m_persona;
     QPixmap lienzo;
     void dibujar(QString cedula, QString nombre);
+    QImage *m_imagen;
 
 
 

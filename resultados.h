@@ -27,13 +27,10 @@ class Resultados : public QMainWindow
 public:
     explicit Resultados(QWidget *parent = nullptr);
     ~Resultados();
-    void abrirArchivo();
 
 private:
     Ui::Resultados *ui;
-    void dibujar();
-    QPixmap lienzo;
-
+    void abrir();
 
 
 };

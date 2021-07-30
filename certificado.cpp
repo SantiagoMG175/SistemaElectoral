@@ -29,6 +29,21 @@ void Certificado::informacion(Persona)
 void Certificado::on_cmdGuardar_clicked()
 {
 
+    //Crear un objeto QDir a partir del directorio del usuario
+        QDir directorio = QDir::home();
+
+        //Agregar al path absoluto del objeto un nombre por defecto del archivo
+        QString pathArchivo = directorio.absolutePath();
+
+        QString nombreArchivo = QFileDialog::getSaveFileName(
+                    this,"Guardar imagen",pathArchivo,"Imagenes (*.png)");
+        if (!nombreArchivo.isEmpty()){
+            if (m_imagen->save(nombreArchivo))
+                QMessageBox::information(this,"Guardar imagen","Archivo guardado en: " + nombreArchivo);
+            else
+                QMessageBox::warning(this,"Guardar imagen","No se pudo guardar el archivo");
+        }
+
 
 }
 
@@ -59,3 +74,13 @@ void Certificado::dibujar(QString cedula, QString nombre)
 }
 
 
+
+void Certificado::on_cmdResultados_clicked()
+{
+    Resultados *r = new Resultados();
+    r->show();
+
+
+
+
+}

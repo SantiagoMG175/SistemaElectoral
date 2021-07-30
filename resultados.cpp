@@ -14,38 +14,71 @@ Resultados::~Resultados()
     delete ui;
 }
 
-void Resultados::abrirArchivo()
+void Resultados::abrir()
 {
-    /*
-    QFile m_archivo;
-    m_archivo.setFileName("C:/Users/Usuario/Downloads/Ventanas/Login/Recursos/Votaciones.txt");
-    QTextStream votos;
-    m_archivo.open(QIODevice::ReadOnly | QIODevice::Text);
-    if(!m_archivo.isOpen()){
-        QMessageBox::warning(0,"AVISO IMPORTANTE", "No se pudo abrir el archivo con los votos");
-        return;
-    }
 
-    votos.setDevice(&m_archivo);
-    while(!votos.atEnd()){
+    {
+        QQueue <QString> m_Lasso;
+        QQueue <QString> m_Arauz;
+        QQueue <QString> m_Blanco;
+        QQueue <QString> m_Nulo;
 
-        auto linea = votos.readLine();
-        auto split = linea.split(";");
 
-        for(int i=0; i<split.size(); i++ ){
-            auto datos = split.at(0);
-            if(i == 0){
 
-                if(datos == "Arauz" ){
-                    m_contadorLasso = datos;
-                    lasso.push(m_contadorLasso);
-                    m_glasso = lasso.size();
+        QFile archivo;
+        archivo.setFileName("D:/Universidad/Programacion/Proyectos QT/SistemaElectoral/SistemaElectoral/documentos/votosGuardados.txt");
+        QTextStream votos;
+        archivo.open(QIODevice::ReadOnly | QIODevice::Text);
+
+
+        if(!archivo.isOpen()){
+            QMessageBox::warning(0,"AVISO IMPORTANTE", "No se pudo abrir el archivo con los votos");
+            return;
+        }
+        votos.setDevice(&archivo);
+        while(!votos.atEnd()){
+
+            auto linea = votos.readLine();
+            auto split = linea.split(";");
+
+
+
+            for(int i=0; i<split.size(); i++ ){
+
+                auto datos = split.at(0);
+                if(i == 0){
+
+                    if(datos == "Lasso" ){
+                        QString contadorL = datos;
+                        m_Lasso.push_back(contadorL);
+                        m_Lasso.size();
+                    }
+                    if(datos == "Arauz"){
+                        QString contadorA = datos;
+                        m_Arauz.push_back(contadorA);
+                        m_Arauz.size();
+                    }
+                    if(datos == "Blanco"){
+                        QString contadorB = datos;
+                        m_Blanco.push_back(contadorB);
+                        m_Blanco.size();
+                    }
+                    if(datos == "Nulo"){
+                        QString contadorN = datos;
+                        m_Nulo.push_back(contadorN);
+                        m_Nulo.size();
+
+
+                        }
+                    }
+
                 }
 
 
+            }
+            archivo.close();
 
+    }
 
-}
-*/
 
 }

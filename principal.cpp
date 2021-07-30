@@ -70,7 +70,7 @@ void principal::buscar()
 {
     QString numeroCedula = ui->inCedula->text();
 
-    bool bandera=false;
+    bool busqueda=false;
 
     if (numeroCedula.isEmpty() || numeroCedula<10){
         QMessageBox::warning(0,"Advertencia","Verifique que los datos sean correctos");
@@ -78,22 +78,25 @@ void principal::buscar()
     }
     for(int i=1;i< m_usuario.length();i++){
         if( m_usuario.at(i)->getCedula()==numeroCedula){
+
+
             QString nombre =  m_usuario.at(i)->getNombre();
             QString cedula =  m_usuario.at(i)->getCedula();
             votacionPersona = new Persona(cedula,nombre);
+
+
             QMessageBox::information(0,"Advertencia","Su voto es secreto");
             cedula =  m_usuario.at(i)->getCedula();
             nombre =  m_usuario.at(i)->getNombre();
+
+
             votacionPersona = new Persona(cedula,nombre);
-            bandera=true;
+            busqueda=true;
 
         }
     }
 
-        qDebug() << nombre;
-        qDebug() << cedula;
-
-        if (bandera==false){
+        if (busqueda==false){
             QMessageBox::warning(0,"Advertencia","No se encuentra en la lista");
             ui->inCedula->clear();
 

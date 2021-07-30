@@ -37,12 +37,8 @@ public:
     QString msg;
 
 private slots:
-
-
     void on_Arauz_clicked();
-
     void on_Lasso_clicked();
-
     void on_cmdVotar_clicked();
 
 private:
