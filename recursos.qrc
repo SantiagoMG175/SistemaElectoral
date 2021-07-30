@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/recursos">
+        <file>recursos/arauz.png</file>
+        <file>recursos/lasso.png</file>
+        <file>recursos/votar.png</file>
+        <file>recursos/cne.png</file>
+        <file>recursos/1200px-Flag_of_Ecuador.svg.png</file>
+        <file>recursos/png-transparent-silhouette-person-people-icon-animals-logo-head-thumbnail.png</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
