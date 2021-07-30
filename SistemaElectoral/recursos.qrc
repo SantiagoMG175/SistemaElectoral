@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/recursos">
-        <file>recursos/arauz.png</file>
-        <file>recursos/lasso.png</file>
-        <file>recursos/votar.png</file>
-    </qresource>
-    <qresource prefix="/"/>
-</RCC>
